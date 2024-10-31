@@ -122,28 +122,28 @@ function setUsername(){
     myHeading.textContent = `mozilla is cool, ${myName}`
 }*/
 alert("helloworld")
+
 const button = document.querySelector("button");
 
 button.addEventListener("click", updateName);
 
-function updateName() {
-  const name = prompt("Enter a new name");
+function updateName(){
+  const name = prompt("please enter your name");
   button.textContent = `Player 1: ${name}`;
 }
 
-function createParagraph() {
+function createParagraph(){
   const para = document.createElement("p");
-  para.textContent = "You clicked the button!";
-  document.body.appendChild(para);
+  para.textContent = "You clicked the button";
+  document.body.appendChild(para)
 }
-
 const buttons = document.querySelectorAll("button");
 
 for (const button of buttons) {
   button.addEventListener("click", createParagraph);
 }
 
-let randomNumber = Math.floor(Math.random()*100)+1;
+let randomNumber = Math.floor(Math.random()*100)+1; //math.random in b/w 0 & 1
 const guesses = document.querySelector(".guesses");
 const lastResult = document.querySelector(".lastResult");
 const lowOrHi = document.querySelector(".lowOrHi");
@@ -153,7 +153,6 @@ const guessField = document.querySelector(".guessField");
 
 let guessCount = 1;
 let resetButton;
-
 
 function checkGuess() {
     const userGuess = Number(guessField.value);
@@ -285,6 +284,17 @@ const one = "hello"
 //const greeting = `${one},${name}`;
 //console.log(greeting);
 
+/*console.log(5+10*3);
+const num1 = 10;
+const num2 = 50;
+console.log(9 * num1);
+console.log(num1 ** 3);
+console.log((num2 % 9) * num1);
+
+let num3 = 6;
+num3--;
+console.log(num3);*/
+
 const btn = document.getElementById("button_B");
 function greet(){
     const name = prompt("what is your name");
@@ -348,8 +358,87 @@ let quote = "to be or not to be";
 quote = quote.replaceAll("be", "code");
 console.log(quote);
 
+/*const shopping = ["bread", "milk","cheese","hummus","noodles"];
+console.log(shopping);
+console.log(shopping.length);
+console.log(shopping[0]);
+shopping[0] = "tahini";
+console.log(shopping);
 
+const seq = [1,1,2,3,4,,6,8,13,18];
+const random = ["tree",795,[0,1,2]];
+console.log(random[2]);
 
+const birds = ["parrot", "falcon", "owl"];
+console.log(birds.indexOf("owl"));
+console.log(birds.indexOf("rabbit"));
 
+const cities = ["manchester", "liverpool"];
+const removecity = cities.pop();
+console.log(removecity);
+
+cities.pop(); //remove the last item
+console.log(cities);
+cities.unshift("ebinbugh");//add item int start
+console.log(cities);
+const newlength = cities.push("Bristol")
+console.log(cities);
+console.log(newlength);
+cities.push("cardiff");
+console.log(cities);
+cities.push("bradord","brighton");
+console.log(cities);
+
+const startbtn = document.getElementById("machine-btn")
+const txt = document.getElementById("stop")
+startbtn.addEventListener("click", updatebtn);
+
+function updatebtn(){
+  if (startbtn.textContent === "start machine"){
+    startbtn.textContent = "stop machine";
+    txt.textContent = "the machine has started";
+  } else {
+    startbtn.textContent = "start machine";
+    txttextContent = "the machine is stopped";
+  }
+}
+
+const newline = `one day you finally knew 
+what you had to do, and began,`;
+console.log(newline);
+//instead we write
+//const newline = `one day you finally knew \nwhat you had to do, and began,`;
+console.log(newline);
+
+const one = 'she said "i think so';
+console.log(one);
+const two = `she said "I'm not doing in there"`;
+console.log(two);
+
+const cities = ["Manchester", "Liverpool", "Carlisle"];
+const index = cities.indexOf("Liverpool");
+if (index != -1){
+  cities.splice(index, 2);//removing the  2 item
+}
+console.log(cities);
+
+const birds = ["parrot", "falcon", "owl"];
+for (const bird of birds){
+  console.log(bird);
+}
+
+function double(number){
+  return number * 2;
+}
+const number = [5,2,7,6];
+const doubled = number.map(double);
+console.log(doubled);
+
+function isLong(city){
+  return city.length > 8;
+}
+const city = ["London", "Liverpool","Totnes", "Edinbugh"];
+const longer = city.filter(isLong);
+console.log(longer);
 
   

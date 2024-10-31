@@ -1,9 +1,10 @@
 {
     "manifest_version": 3,
-    "verdion": "1.1",
+    "verdion": "1.0",
     "name": "Leads tracker",
     "action": {
-        "default_popup": "index.html",
+        "default_popup": "index5.html",
         "default_icon": "icon.png"
     }
 }
+
