@@ -148,7 +148,7 @@ let obj = {
 console.log(obj.for + obj.let + obj.return);
 console.log( obj["0"]);
 
-let obj = {};
+//let obj = {};
 obj._proto_ = 5;
 console.log(obj._proto_);
 
@@ -347,7 +347,7 @@ console.log(user.sizes.width);
 console.log(clone.sizes.width);
 
 let user = { name: "john"};
-let admin = { name: "admin" };
+//let admin = { name: "admin" };
 function sayHi() {
     console.log(this.name);
 }
