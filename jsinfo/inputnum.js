@@ -62,21 +62,21 @@ console.log(ar.indexOf(false));
 console.log(ar.indexOf(null));
 console.log(ar.includes(1));
 
-let users = [
+/*let users = [
     {id: 1, name: "john"},
     {id: 2, name: "pete"},
     {id: 3, name: "mary"},
     {id: 4, name: "john"}
-];
+];*/
 console.log(users.findIndex(user => user.name == 'john')); // index of first john
 console.log(users.findLastIndex(user => user.name == 'john')); // index of last john
-let someUser = users.filter(item => item.id < 3); //return array of the first two users
+l//et someUser = users.filter(item => item.id < 3); //return array of the first two users
 console.log(someUser.length);
 
 let lengths = ["bilbo", "gandalf", "nazgul"].map(item => item.length);
 console.log(lengths);
 
-let arr = [1,2,15];
+//let arr = [1,2,15];
 arr.sort();
 console.log(arr); // the items are sorted as string 
 
@@ -104,49 +104,9 @@ console.log(Arr);
 Arr.sort( (a, b) => a - b);
 console.log(Arr);
 
-let countries = ['Österreich', 'Andorra', 'Vietnam'];
-console.log(countries.sort( (a, b) => a > b ? 1 : -1));
-console.log( countries.sort( (a, b) => a.localeCompare(b) ) );
-
-let aa = [1,2,3,4,5];
-aa.reverse();
-console.log(aa);
-let result = aa.reduce((sum, current) => sum + current);
-console.log(result);
-
-
-let names = 'bilbo, gandalf, nazgul';
-let arr = names.split(', ');
-let str = arr.join(';');
-console.log( str);
-
-for (let name of arr) {
-    console.log( `A message to ${name}`)
-}
 
 console.log(typeof {});
 console.log(Array.isArray({}));
-
-let army = {
-    minAge: 18,
-    maxAge: 27,
-    canJoin(user) {
-        return user.age >= this.minAge && user.age < this.maxAge;
-    }
-};
-
-let users = [
-    {age: 16},
-    {age: 20},
-    {age: 23},
-    {age: 30}
-];
-
-let soldier = users.filter(army.canJoin, army);
-
-console.log(soldier.length);
-console.log(soldier[0].age);
-console.log(soldier[1].age);
 
 function camelize(str) {
     return str
@@ -177,53 +137,16 @@ function filterRangeInPlace(arr, a, b) {
     }
 }
 
-let arr = [5,3,8,1];
 
-filterRangeInPlace(arr, 1, 4);
-console.log( arr ); 
-
-let y = [5,2,1,-10,8];
-y.sort((a,b) => b-a); //decreasing order
-console.log(y);
-
-function copySorted(arr) {
-    return arr.slice().sort();
-}
-
-let arr = ["HTML", "Javascript", "CSS"];
+//let arr = ["HTML", "Javascript", "CSS"];
 
 let sorted =copySorted(arr);
 
 console.log( sorted );
 console.log( arr );
 
-function Calculator() {
-    this.methods = {
-        "-": (a, b) => a - b,
-        "+": (a, b) => a + b
-    };
 
-    this.calculate = function(str) {
-
-        let split = str.split(''),
-        a = +split[0],
-        op = split[1],
-        b = +split[2];
-
-        if (!this.methods[op] || isNaN(a) || isNaN(b)) {
-            return NaN;
-        }
-
-        return this.methods[op](a, b);
-    };
-
-    this.addMethod = function(name, func) {
-        this.methods[name] = func;
-    };
-}
-
-
-let john = { name: "john", surname: "smit", id: 1 };
+/*let john = { name: "john", surname: "smit", id: 1 };
 let pete = { name: "pete", surname: "Hunt", id: 2 };
 let mary = { name: "mary", surname: "key", id: 3 };
 let users = [ john, pete, mary ];
@@ -231,7 +154,7 @@ let users = [ john, pete, mary ];
 let usersMapped = users.map(user => ({
     fullname: `${user.name} ${user.surname}`,
     id: user.id
-}));
+}));*/
 
 console.log( usersMapped[0].id);
 console.log(usersMapped[0].fullname);
@@ -243,7 +166,7 @@ let john ={ name: "john", age: 25 };
 let pete = { name: "pete", age: 30 };
 let mary = { name: "mary", age: 28 };
 
-let arr = [ pete, john, mary ];
+//let arr = [ pete, john, mary ];
 
 sortByAge(arr);
 
@@ -333,9 +256,131 @@ console.log( countries.sort( (a, b) => a > b ? 1 : -1))
 console.log( countries.sort( (a,b) => a.localeCompare(b)));
 
 let arr = [1,2,3,4,5];
+let result = arr.reduce((sum, current) => sum + current, 0);
+console.log(result);
+
 arr.reverse();
 
 console.log( arr );
+
+let names = 'bilbo, gandalf, nazgul';
+let arr = names.split(', ');
+let str = arr.join(';');
+console.log(str);
+console.log(arr);
+
+for (let name of arr) {
+    console.log(`A message to ${name}.`);
+}
+
+let army = {
+    minAge: 18,
+    maxAge: 27,
+    canJoin(user) {
+        return user.age >= this.minAge && user.age < this.maxAge;
+    }
+};
+
+let users = [
+    {age: 16},
+    {age: 20},
+    {age: 23},
+    {age: 30}
+];
+
+let soldiers = users.filter(army.canJoin, army);
+
+console.log(soldiers.length);
+console.log(soldiers[0].age);
+console.log(soldiers[1].age);
+
+function arraysEqual(arr1, arr2) {
+    return arr1.length === arr2.length && arr1.every((value, index) => value === arr2[index]);
+}
+
+console.log(arraysEqual([1,2], [1,2]));
+
+
+function filterRangeInPlace(arr, a, b) {
+    for (let i = 0; i < arr.length; i++) {
+        let val = arr[i];
+
+        if (val < a || val > b) {
+            arr.splice(i, 1);
+            i--;
+        }
+    }
+}
+
+let arr = [5,3,8,1];
+
+filterRangeInPlace(arr, 1,4); 
+console.log( arr );
+
+let arr = [5,2,1,-10,8];
+arr.sort((a,b) => b-a);
+console.log(arr);
+
+function copySorted(arra ){
+    return arra.slice().sort();
+}
+
+let arra = ["html","js","css"];
+
+let sorted = copySorted(arra);
+
+console.log(sorted);
+console.log( arra );
+
+function Calculator() {
+    this.methods = {
+        "-": (a,b) => a - b,
+        "+": (a,b) => a + b
+    };
+
+    this.calculate = function(str) {
+        let split = str.split(''),
+        a = +split[0],
+        op = split[1],
+        b = +split[2];
+
+        if (!this.methods[op] || isNaN(a) || isNaN(b)) {
+            return NaN;
+        }
+
+        return this.methods[op](a, b);
+    };
+
+    this.addMethod = function(name, func) {
+        this.methods[name] = func;
+    };
+}
+let powerCalc = new Calculator;
+powerCalc.addMethod("*", (a, b) => a * b);
+powerCalc.addMethod("/", (a, b) => a / b);
+powerCalc.addMethod("**", (a, b) => a ** b);
+
+let result = powerCalc.calculate("2 ** 3");
+console.log( result );
+
+function sortByAge(users) {
+    users.sort((a, b) => a.age - b.age);
+}
+let john = { name: "john", age:25 };
+let pete = { name: "pete", age:30 };
+let mary = { name: "mary", age:28 };
+
+let users = [ john, pete, mary ];
+sortByAge(users);
+
+console.log(users[0].name);
+console.log(users[1].name);
+console.log(users[2].name);
+
+let names = users.map(item => item.name);
+console.log( names );
+
+
 
 
 
