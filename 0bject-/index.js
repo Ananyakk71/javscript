@@ -259,14 +259,7 @@ let room = {
     return (key == 'occupiedBy') ? undefined : value;
  }) );*/
 
- let user = {
-    name: "john",
-    age: 25,
-    roles: {
-        isAdmin: false,
-        isEditor: true
-    }
- };
+
 
  console.log(JSON.stringify(user, null, 2));
 
@@ -433,18 +426,9 @@ showName("ilya");
 
 console.log(Math.max(3,5,1));
 
-let arr1 = [1, -2, 3, 4];
-let arr2 = [8, 3, -8, 1];
-
-console.log( Math.max(...arr1,...arr2) );
 
 let str = "hello";
 console.log(Array.from(str));
-
-let arr = [1,2,3];
-let arrCopy = [...arr]; //put the list into new array
-console.log(JSON.stringify(arr) === JSON.stringify(arrCopy));
-console.log(arr === arrCopy);
 
 arr.push(4);
 console.log(arr);
@@ -524,12 +508,6 @@ function Counter() {
       return --count;
     };
   }
-  
-  let counter = new Counter();
-  
-  console.log( counter.up() );  
-  console.log( counter.up() ); 
-  console.log( counter.down() );
 
 let phrase = "hello";
 
@@ -635,4 +613,389 @@ console.log( sum(6)(-1)(-2)(-3) );
 
 let sum = new Function('a', 'b', 'return a + b');
 console.log( sum(1, 2) );
+
+function sumTo(n) {
+    let sum = 0;
+    for (let i = 1; i <= n; i++) {
+        sum += i;
+    }
+    return sum;
+}
+
+console.log(sumTo(100));
+
+function factorial(n) {
+    return (n != 1) ? n *factorial(n - 1) : 1;
+}
+
+console.log(factorial(4));
+
+let arr1 = [3,5,1];
+let arr2 = [8, 3, -8]
+console.log(Math.max(...arr1,...arr2));
+
+let arr = [1,2,3];
+let arrCopy = [...arr];
+
+console.log(JSON.stringify(arr) === JSON.stringify(arrCopy));
+console.log(arr === arrCopy);
+
+let counter = makeCounter();
+
+function makeCounter() {
+    let count = 0;
+
+    return function() {
+        return count++;
+    };
+}
+
+if (true) {
+    var test = true;
+}
+
+console.log(test);
+
+function sayHi() {
+    phrase = "hello"
+    console.log(phrase);
+    var phrase;
+}
+sayHi();
+
+
+/*let user = {
+    firstName: "john"
+  };
+  function func(phrase) {
+    console.log(phrase + ', ' + this.firstName);
+  }
+  let funcUser = func.bind(user);
+  funcUser("hello");
+
+  let user = {
+    firstName: "john",
+    sayHi() {
+      console.log(`hello, ${this.firstName}!`);
+    }
+  };
+  let sayHi = user.sayHi.bind(user);
+  
+  sayHi();
+  setTimeout(sayHi, 1000);
+  
+  user = {
+    sayHi() { console.log("another user in setTimeout!");}
+  };  */
+
+function mul(a, b) {
+    return a * b;
+}
+
+let double = mul.bind(null, 2); //fixed 2 as first argument
+
+console.log( double(3) );
+console.log( double(5) );
+
+function f() {
+    console.log(this.name);
+}
+
+f = f.bind( {name: "john"}).bind( {name: "ann" });
+f();
+
+
+function sayHi() {
+    console.log( this.name );
+}
+sayHi.test = 5;
+
+let bound = sayHi.bind({
+    name: "john"
+});
+
+console.log( bound.test );
+
+let group = {
+    title: "our group",
+    students: ["john", "pete", "alice"],
+
+    showList() {
+        this.students.forEach(function(student) {
+          console.log(this.title + ': ' + student)
+    });
+    }
+};
+
+group.showList();
+
+function defer(f, ms) {
+    return function() {
+      setTimeout(() => f.apply(this, arguments), ms);
+    };
+  }
+  
+  function sayHi(who) {
+    console.log('Hello, ' + who);
+  }
+  
+  let sayHiDeferred = defer(sayHi, 2000);
+  sayHiDeferred("John");
+
+  let user = {
+    name: "john"
+  };
+ Object.defineProperty(user, "name", {
+   writable: false
+ });
+let des = Object.getOwnPropertyDescriptor(user, 'name');
+console.log(JSON.stringify(des, null, 2));
+
+let user = {
+    name: "john",
+    toString() {
+        return this.name;
+    }
+};
+
+Object.defineProperty(user, "toString", {
+    enumerable: false
+});
+for (let key in user) console.log(key);
+console.log(Object.keys(user));
+
+let descripter = Object.getOwnPropertyDescriptor(Math, 'PI');
+console.log(JSON.stringify(descripter, null, 2));
+
+Object.defineProperties(user, {
+    name: { value: "john", writable: false },
+    surname: { value: "smith", writable: false },
+});
+
+let user = {
+    name: "john",
+    surname: "smith",
+
+    get fullName() {
+        return `${this.name} ${this.surname}`;
+    },
+
+set fullName(value) {
+    [this.name, this.surname] = value.split(" ");
+}
+};
+user.fullName = "Alice cooper";
+console.log(user.name);
+console.log(user.surname);
+
+let user = {
+    get name() {
+        return this._name;
+    },
+
+    set name(value) {
+        if (value.length < 4) {
+            console.log("name is too short, need at least 4 character");
+            return;
+        }
+        this._name = value;
+    }
+};
+
+user.name = "pete";
+console.log(user.name);
+
+function User(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+  
+  let john = new User("John", 25);
+  
+ console.log( john.age );
+
+  function User(name, birthday) {
+    this.name = name;
+    this.birthday = birthday;
+  }
+  let john1 = new User("john", new Date(1992,6,1));
+  console.log(john1.birthday);
+
+  function User(name, birthday) {
+    this.name = name;
+    this.birthday = birthday;
+
+    Object.defineProperty(this, "age", {
+        get() {
+            let todayYear = new Date().getFullYear();
+            return todayYear - this.birthday.getFullYear();
+        }
+    });
+  }
+
+  let john2 = new User("john", new Date(1992,6,1));
+
+  console.log(john2.birthday);
+  console.log(john2.age);
+
+/*let animal = {
+    eats: true
+};
+let rabbit = {
+    jumps: true
+};
+
+rabbit.__proto__ = animal;
+console.log(rabbit.eats);
+console.log(rabbit.jumps);*/
+
+let user = {
+    name: "john",
+    surname: "smith",
+
+    set fullName(value) {
+        [this.name, this.surname] = value.split(" ");
+    },
+    get fullName() {
+        return `${this.name} ${this.surname}`;
+    }
+};
+
+let admin = {
+    __proto__: user,
+    isAdmin: true
+};
+
+console.log(admin.fullName);
+console.log(user.fullName);
+
+let animal = {
+    jumps: null
+};
+/*let rabbit = {
+    jumps: true,
+    __proto__: animal
+};
+console.log(rabbit.jumps);
+delete rabbit.jumps;
+console.log(rabbit.jumps);
+delete animal.jumps;
+console.log(rabbit.jumps);
+
+for(let prop in rabbit) {
+    let isOwn = rabbit.hasOwnOroperty(prop);
+
+    if (isOwn) {
+        console.log(`Our: ${prop}`);
+    } else {
+        console.log(`inherited: ${prop}`);
+    }
+}
+*/
+let head = {
+    glasses: 1
+};
+let table = {
+    pen: 3,
+    __proto__: head
+};
+let bed = {
+    sheet: 1,
+    pillow: 2,
+    __proto__: table
+};
+let pocket = {
+    money: 2000,
+    __proto__: bed
+};
+
+console.log(pocket.pen);
+console.log(bed.glasses);
+console.log(table.money);
+
+let hamster = {
+    stomach: [],
+
+    eat(food) {
+        this.stomach.push(food);
+    }
+};
+let speedy = {
+    __proto__: hamster,
+    stomach: []
+};
+let lazy = {
+    __proto__: hamster,
+    stomach: []
+};
+speedy.eat("apple");
+console.log(speedy.stomach);
+console.log(lazy.stomach);
+
+class User {
+    constructor(name) { this.name = name; }
+    sayHi() { console.log(this.name); }
+}
+console.log(typeof User);
+console.log(User == User.prototype.constructor);
+console.log(User.prototype.sayHi);
+console.log(Object.getOwnPropertyDescriptor(User.prototype));
+
+class User {
+    name = "ann";    
+}
+let user = new User();
+console.log(user.name);
+console.log(User.prototype.name);
+
+class Animal {
+    constructor(name) {
+        this.speed = 0;
+        this.name = name;
+    }
+    run(speed) {
+        this.speed = speed;
+        console.log(`${this.name} runs with speed ${this.speed}.`);
+    }
+    stop() {
+        this.speed = 0;
+        console.log(`${this.name} stands still.`);
+    }
+}
+
+class Rabbit extends Animal {
+    hide() {
+        console.log(`${this.name} hides!`);
+    }
+     stop() {
+        super.stop();
+        this.hide();
+     }
+}
+let rabbit = new Rabbit("white Rabbit");
+rabbit.run(5);
+rabbit.stop();
+
+class Clock {
+    constructor({ template }) {
+        this.template = template;
+    }
+    render() {
+        let date = new Date();
+        let hours = date.getHours();
+        if (hours < 10) hours = '0' + hours;
+
+        let mins = date.getMinutes();
+        if (mins < 10) mins = '0' + mins;
+
+        let secs = date.getSeconds();
+        if (secs < 10) secs = '0' + secs;
+
+        let output = this.template
+        .replace('h', hours)
+        .replace('m', mins)
+        .replace('s', secs)
+    }
+}
+
 

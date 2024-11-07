@@ -1,173 +1,167 @@
-alert("hello")
-window.alert("hello")
 
-var gVar = 5;
-alert(window.gVar);
+function sayHi() {
+  alert("hi");
+  sayHi.counter++;
+}
+sayHi.counter = 0;
 
-window.currentUser = {
-    name: "john"
-};
+sayHi();
+sayHi();
+alert(`called ${sayHi.counter} times`);
 
-alert(currentUser.name);
-alert(window.currentUser.name);
 
-function ask(question, ...handlers) {
-    let isyes = confirm(question);
+function getfunc() {
+  let value = "test";
+  let func = function() {alert(value);};
+  return func;
+}
 
-    for(let handler of handlers) {
-        if (handler.length == 0) {
-            if (isyes) handler();
-        } else {
-            handler(isyes);
-        }
+getfunc()();
+
+/*function printNumber(from, to) {
+  let current = from;
+
+  function go() {
+    alert(current);
+    if (current == to) {
+      clearInterval(timerId);
     }
-}
-
-ask("question?", () => alert('you said yes'), result => alert(result));
-
-function makeCounter() {
-    function counter() {
-        return counter.count++;
-    };
-
-    counter.count = 0;
-
-    return counter;
-}
-
-let counter = makeCounter();
-counter.count = 10;
-alert( counter() );
-alert( counter() );
-
-function sum(a) {
-
-    let currentSum = a;
-  
-    function f(b) {
-      currentSum += b;
-      return f;
-    }
-  
-    f.toString = function() {
-      return currentSum;
-    };
-  
-    return f;
+    current++;
   }
-
-  alert( sum(1)(2) );
-  alert( sum(5)(-1)(2))
-
-  function getFunc() {
-    let value = "test";
-
-    let func = function() {alert(value);};
-
-    return func;
-  }
-
-  getFunc()();
-
-  function sayhi() {
-    alert('hooo');
-  }
-
-  setTimeout(sayhi, 1000);
-
-function sayHi(phrase, who) {
-    alert( phrase + ', ' + who );
+  go();
+  let timerId = setInterval(go, 1000);
 }
 
-setTimeout(sayHi, 1000, "hello", "john")
-
-
-/*let timerId = setInterval(() => alert('tick'), 2000);
-setTimeout(() => { clearInterval(timerId); alert('stop');}, 5000);*/
-
-
-
-/*function printNumbers(from, to) {
-    let current = from;
-
-    let timerId = setInterval(function() {
-        alert(current);
-        if (current == to) {
-            clearInterval(timerId);
-        }
-        current++;
-    },1000);
-}
-
-printNumbers(5, 10)
-
-function printNumbers(from, to) {
-    let current = from;
-  
-    setTimeout(function go() {
-      alert(current);
-      if (current < to) {
-        setTimeout(go, 1000);
-      }
-      current++;
-    }, 1000);
-  }
-
-printNumbers(5, 10);*/
-
-function printNumbers(from, to) {
-    let current = from;
-
-    function go() {
-        alert(current);
-        if (current == to) {
-            clearInterval(timerId);
-        }
-        current++;
-    }
-
-    go();
-    let timerId = setInterval(go, 1000);
-}
-printNumbers(5, 10);
-
-let i = 0;
-
-setTimeout(() => alert(i), 100);
-
-for(let j = 0; j < 100000000; j++) {
-    i++;
-}
+printNumber(5, 10);*/
 
 function slow(x) {
+  alert(`called with ${x}`);
+  return x;
+}
 
-    alert(`Called with ${x}`);
-    return x;
+function cahingDecorator(func) {
+  let cahe = new Map();
+
+  return function(x) {
+    if (cahe.has(x)) {
+      return cahe.get(x);
+    }
+     
+    let result = func(x);
+
+    cahe.set(x, result);
+    return result;
+  };
+}
+
+slow = cahingDecorator(slow);
+
+alert( slow(1) );
+alert( "again: " + slow(1) );
+
+alert( slow(2) );
+alert( "again: " + slow(2) );
+
+/*let user = {
+  firstName: "john",
+  sayHi() {
+      alert(`hello, ${this.firstName}!`);
   }
-  
-  function cachingDecorator(func) {
-    let cache = new Map();
-  
-    return function(x) {
-      if (cache.has(x)) {  
-        return cache.get(x); 
-      }
-  
-      let result = func(x); 
-  
-      cache.set(x, result); 
-      return result;
-    };
+};
+
+setTimeout(() => {
+  user.sayHi();
+}, 1000);
+
+user = {
+  sayHi() { alert("Another user in setTimeout")}
+}
+
+let user = {
+  firstName: "john",
+  sayHi() {
+    alert(`hello, ${this.firstName}!`);
   }
-  
-  slow = cachingDecorator(slow);
+};
+let sayHi = user.sayHi.bind(user);
 
-  alert( slow(1) ); 
-  alert( "Again: " + slow(1) ); 
-  
-  alert( slow(2) ); 
-  alert( "Again: " + slow(2) ); 
+sayHi();
+setTimeout(sayHi, 1000);
 
+user = {
+  sayHi() { alert("another user in setTimeout!");}
+};*/
 
+function askPassword(ok, fail) {
+  let password = prompt("password?", '');
+  if (password == "rockstar") ok();
+  else fail();
+}
 
-  
+/*let user = {
+  name: 'john',
+
+  loginOk() {
+    alert(`${this.name} logged in`);
+  },
+  loginFail() {
+    alert(`${this.name} failed to log in`);
+  },
+
+};
+askPassword(user.loginOk.bind(user), user.loginFail.bind(user));*/
+
+class User {
+  name = prompt("Name, please?", "john");
+}
+let user = new User();
+alert(user.name);
+
+class Button {
+  constructor(value) {
+    this.value = value;
+  }
+
+  click = () => {
+    alert(this.value);
+  }
+}
+let button = new Button("hey");
+setTimeout(button.click, 1000);
+
+class Clock {
+  constructor({ template }) {
+    this.template = template;
+  }
+
+  render() {
+    let date = new Date();
+
+    let hours = date.getHours();
+    if (hours < 10) hours = '0' + hours;
+
+    let mins = date.getMinutes();
+    if (mins < 10) mins = '0' + mins;
+
+    let secs = date.getSeconds();
+    if (secs < 10) secs = '0' + secs;
+
+    let output = this.template
+    .replace('h', hours)
+    .replace('m', mins)
+    .replace('s', secs);
+
+    console.log(output);
+  }
+
+  stop() {
+    clearInterval(this.timer);
+  }
+  start() {
+    this.render();
+    this.timer = setInterval(() => this.render(), 1000);
+  }
+}
+let clock = new Clock({template: 'h:m:s'});
+clock.start();
+
