@@ -1,0 +1,13 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+}
+th, td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    width: 14.28%; /* Seven equal columns for days */
+}
+th {
+    background-color: #f4f4f4;
+}

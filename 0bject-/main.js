@@ -165,3 +165,113 @@ class Clock {
 let clock = new Clock({template: 'h:m:s'});
 clock.start();
 
+function createCounter(n) {
+  return function() {
+      return n++;
+  };
+}
+const counter = createCounter(5); 
+
+console.log(counter());
+console.log(counter());
+
+
+function expect(val) {
+  return {
+      toBe: function(expected) {
+          if (val === expected) {
+              return true;
+          } else {
+              throw new Error("Not Equal");
+          }
+      },
+      notToBe: function(expected) {
+          if (val !== expected) {
+              return true;
+          } else {
+              throw new Error("Equal");
+          }
+      }
+  };
+}
+console.log(expect(5).toBe(5));       // Outputs: true
+console.log(expect(5).notToBe(10));
+
+function mul(a, b) {
+  return a * b;
+ 
+}
+console.log(mul(110, 3));
+
+function next(side1,side2) {
+  return side1 + side2 - 1;
+}
+console.log(next(8, 10));
+
+function cube(a) {
+  return a ** 3;
+}
+console.log(cube(3));
+
+function hello() {
+  return {
+    
+  }
+}
+
+function add(num) {
+  return num + 1
+}
+console.log(add(5));
+console.log(add(10));
+
+function getfirst(arr) {
+ return arr[2];
+}
+console.log(getfirst([1,3,5]));
+
+function remainder(a, b) {
+  return a % b;
+}
+console.log(remainder(3, 4));
+console.log(remainder(-9, 45));
+
+function number(n) {
+  if (n <= 0) {
+    return true;
+  } else {
+    return false;
+  }
+};
+console.log(number(-2));
+console.log(number(0));
+
+function game(a, b) {
+  return a*2 + b*3;
+}
+console.log(game(38, 8));
+console.log(game(7, 5));
+
+
+function namestring(name) {
+  let result = name + " edabit";
+  return result;
+}
+console.log(namestring("ann"));
+
+
+function numbers(a, b) {
+  if (a + b < 100){
+    return true;
+  } else {
+    return false;
+  }
+}
+console.log(numbers(83,34));
+console.log(numbers(22,15));
+
+function footbal(wins,draws,losses) {
+  return wins*3 + draws*1 + losses*0;
+}
+console.log(footbal(3,4,2));
+
