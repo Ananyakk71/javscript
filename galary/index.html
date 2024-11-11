@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Gallary</title>
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+         <div class="gallary">
+            <img src="img/img1.jpg" class="main-image" id="mainImage">
+            <div class="thumbnails">
+                <div class="thumbnail">
+                    <img src="img/img1.jpg" onclick="changeImage('img/img1.jpg')">
+                </div>
+                <div class="thumbnail">
+                    <img src="img/img2.jpg" onclick="changeImage('img/img2.jpg')">
+                </div>
+                <div class="thumbnail">
+                    <img src="img/img3.jpg" onclick="changeImage('img/img3.jpg')">
+                </div>
+                <div class="thumbnail">
+                    <img src="img/img4.jpg" onclick="changeImage('img/img4.jpg')">
+                </div>
+                <div class="thumbnail">
+                    <img src="img/img5.jpg" onclick="changeImage('img/img5.jpg')">
+                </div>
+            </div>
+         </div>
+         <button id="menu">Menu (click me)</button>
+         <div id="container">
+            <div class="smiley-green">
+                <div class="left-eye"></div>
+                <div class="right-eye"></div>
+                <div class="smile"></div>
+            </div>
+
+            <div class="smiley-yellow">
+                <div class="left-eye"></div>
+                <div class="right-eye"></div>
+                <div class="smile"></div>
+            </div>
+
+            <div class="smiley-red">
+                <div class="left-eye"></div>
+                <div class="right-eye"></div>
+                <div class="smile"></div>
+            </div>
+         </div>
+         <textarea id="log">Events will show up here</textarea>
+         <script src="index.js"></script>
+    </body>
+</html>

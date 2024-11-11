@@ -1,9 +1,27 @@
 <!DOCTYPE html>
 <html>
     <head>
-
+      <link rel="stylesheet" href="index.css">
     </head>
     <body class="main page">
+        <input value="Click me" onclick="Click" type="button">
+        <input value="Count rabbits" onclick="countRabbits()" type="button">
+        <input value="click" id="click" type="button">
+        <input id="hi" type="button" value="hello" />
+        <button id="btn">Chlick here</button>
+        <input type="button" onclick="this.hidden=true" value="click to hide the button">
         <script src="index.js"></script>
+        <form>FORM
+            <div>DIV
+                <p>P</p>
+            </div>
+        </form>
+        Counter: <input type="button" value="1" data-counter>
+        One more counter: <input type="button" value="2" data-counter>
+        <button data-toggle-id="subscribe-mail">Show subscription form</button>
+        <form id="subscribe-mail" hidden>
+            your mail: <input type="email">
+        </form>
+        <a href="https://w3.org" onclick="handler()">The browser will go to w3.org</a>
     </body>
 </html>
