@@ -1,9 +1,114 @@
+<!doctype html>
 <html>
-    <head>
-        <link rel="stylesheet" href="index.css">
-    </head>
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="style.css">
+</head>
     <body>
-        <p id="welcome-el"></p>
-        <script src="index1.js"> </script>
+        <table id="table">
+            <tr>
+                <th colspan="3"><em>Bagua</em> Chart: Direction, Element, Color, Meaning</th>
+            </tr>
+            <tr>
+               <td class="nw"><strong>Northwest</strong>
+                <br>Metal
+                <br>Silver
+                <br>Elders
+               </td> 
+               <td class="n"><strong>North</strong>
+                <br>Water
+                <br>Blue
+                <br>Change
+               </td>
+               <td class="ne"><strong>Northeast</strong>
+                <br>Earth
+                <br>Yellow
+                <br>Direction
+              </td>
+            </tr>
+            <tr>
+               <td class="w"><strong>West</strong>
+                <br>Metal
+                <br>Gold
+                <br>Youth
+               </td>
+               <td class="c"><strong>Center</strong>
+                <br>All
+                <br>Purple
+                <br>Harmony
+              </td>
+              <td class="e"><strong>East</strong>
+                <br>Wood
+                <br>Blue
+                <br>Future
+              </td>
+            </tr>
+            <tr>
+                <td class="sw"><strong>Southwest</strong>
+                    <br>Earth
+                    <br>Brown
+                    <br>Tranquility
+                  </td>
+                  <td class="s"><strong>South</strong>
+                    <br>Fire
+                    <br>Orange
+                    <br>Fame
+                  </td>
+                  <td class="se"><strong>Southeast</strong>
+                    <br>Wood
+                    <br>Green
+                    <br>Romance
+                  </td>
+            </tr>
+        </table>
+        <textarea id="text"></textarea>
+        <input type="button" onclick="text.value=''" value="Clear">
+        <div style="background:blue" onmouseover="alert('never works')"></div>
+        <div style="background:red" onmouseover="alert('over red!')"></div>
+        <form id="form">
+            <fieldset name="userFields">
+                <legend>info</legend>
+                <input name="logn" type="text">
+            </fieldset>
+        </form>
+        <select id="select">
+            <option value="apple">Apple</option>
+            <option value="pear">Pear</option>
+            <option value="banana">Banana</option>
+        </select>
+        <select id="genres">
+          <option value="rock">Rock</option>
+          <option value="blues" selected>Blues</option>
+        </select>
+        your email: <input type="email" id="input">
+        <input type="text" style="width:220px" placeholder="make email invalid and try to focus here">
+        <ul>
+          <li tabindex="1">One</li>
+          <li tabindex="0">Zero</li>
+          <li tabindex="2">Two</li>
+          <li tabindex="-1">minus one</li>
+        </ul>
+        <style>
+          li { cursor: pointer; }
+          :focus { outline: 1px dashed green; }
+        </style>
+        <select onchange="alert(this.value)">
+          <option value="">Select something</option>
+          <option value="1">Option 1</option>
+          <option value="2">Option 2</option>
+          <option value="3">Option 3</option>
+        </select>
+        <input type="text" id="input"> oninput: <span id="result"></span>
+        <form onsubmit="alert('submit');return false">
+          First: Enter in the input field <input type="text" value="text"><br>
+          second: click "submit": <input type="submit" value="submit">
+        </form>
+        <img id="img" src="https://en.js.cx/clipart/train.gif?speed=1&cache=0">
+        <div contenteditable id="elem">Click and <b>edit</b>, please</div>
+        <p id="p">Example: <i>italic</i> and <b>bold</b></p>
+        From <input id="start" type="number" value=1> - To <input id="end" type="number" value=4>
+        <button id="button">Click to select</button>
+      <script src="index1.js"> </script>
     </body>
 </html>
