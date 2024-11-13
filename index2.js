@@ -1,30 +1,30 @@
-let errorParagraph=document.getElementById("error")
-console.log(errorParagraph)
-function purchase(){
-    console.log("button clicked")
-    errorParagraph.textContent="something went wrong"
-}
-//create 4fun
-//call correct fun when user click
-let num1 = 8
-let num2 = 2
-document.getElementById("num1-el").textContent = num1
-document.getElementById("num2-el").textContent = num2
+input.oninput = function() {
+    result.innerHTML = input.value;
+};
 
-let sumEl = document.getElementById(sum-el)
-function add(){
-    let result = num1 + num2
-    sumEl.textContent = "Sum: " + result
+button1.onclick = () => {
+    input1.setRangeText("HELLO", input1.selectionStart, input1.selectionEnd, "end");
+    input1.focus();
+  };
+
+let i = 0;
+
+function count() {
+    do {
+        i++;
+        progress.innerHTML = i;
+    } while (i % 1e3 != 0);
+
+    if (i < 1e7) {
+        setTimeout(count);
+    }
 }
-function subtract(){
-    let result = num1 - num2
-    sumEl.textContent = "Sum: " + result
-}
-function divide(){
-    let result = num1 / num2
-    sumEl.textContent = "Sum: " + result
-}
-function multiply(){
-    let result = num1 * num2
-    sumEl.textContent = "Sum: " + result
-}
+
+count();
+
+setTimeout(() => alert("timeout"));
+Promise.resolve()
+.then(() => alert("promise"));
+
+alert("code");
+

@@ -3,18 +3,21 @@
         <link rel="stylesheet" href="index.css">
     </head>
     <body>
-        <p>nike shoe</p>
-        <button onclick="purchase()">purchse-$149</button>
-        <p id="error"></p>
-        <span id="num1-el"></span>
-        <span id="num2-el"></span>
-        <br>
-        <button onclick="add()">Add</button>
-        <button onclick="subtract()">Subtract</button>
-        <button onclick="divide()">Divide</button>
-        <button onclick="multiply()">Multiply</button>
-        <br>
-        <span id="sum-el">Sum: </span>
+        <input type="text" onchange="alert(this.value)">
+        <input type="button" value="Button">
+        <select onchange="alert(this.value)">
+            <option value="">Select something</option>
+            <option value="1">Option 1</option>
+            <option value="2">Option 2</option>
+            <option value="3">Option 3</option>
+        </select>
+        <input type="text" id="input"> oninput: <span id="result"></span>
+        <button type="button" onclick="display">Click to display date and time</button>
+        <p id="demo"></p>
+        <input id="input1" style="width:200px" value="Text Text Text Text Text">
+        <button id="button1">Insert "Hello at cursor</button>
+        <div>Selectable<div id="elem">Unselectable</div></div>
+        <div id="progress"></div>
         <script src="index2.js"> </script>
     </body>
 </html>
