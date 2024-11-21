@@ -82,5 +82,84 @@ function myFunction() {
     text.replace("Hey","Hello");
 }
 
+function myfunction() {
+    const message = document.getElementById("p01");
+    message.innerHTML = "";
+    let x = document.getElementById("test").value;
+    try {
+        if(x.trim()== "") throw "empty";
+        if(isNaN(x)) throw "not a number";
+        x = Number(x);
+        if(x < 5) throw "too low";
+        if(x > 10) throw "hight";
+    }
+    catch(err) {
+        message.innerHTML = "input is 3 " + err;
+    }
+}
+
+var x = 5;
+var y = 7;
+
+elem = document.getElementById("display");
+elem.innerHTML = x + " " + y;
+
+/*const detail = {
+    firstName: "John",
+    lastName: "Doe",
+    id: 5566,
+    fullName: function() {
+        return this.firstName + " " + this.lastName;
+    }
+};
+document.getElementById("this").innerHTML = detail.fullName();*/
+
+const person1 = {
+    fullName: function() {
+        return this.firstName + " " + this.lastName;
+    }
+}
+
+const person2 = {
+    firstName: "Benn",
+    lastName: "Doe",
+}
+
+let k = person1.fullName.call(person2);
+document.getElementById("this").innerHTML = k;
+
+const person3 = {
+    firstName:"Ann",
+    lastName:"rose",
+    fullName: function() {
+        return this.firstName + " " + this.lastName;
+    }
+}
+const member = {
+    firstName: "Hedge",
+    lastName: "Nilsen"
+}
+
+let fullName = person3.fullName.bind(member);
+document.getElementById("bind").innerHTML = fullName();
+
+
+class Car {
+    constructor(name, year) {
+        this.name = name;
+        this.year = year;
+    }
+    age(x) {
+        return x - this.year;
+    }
+}
+
+const date = new Date();
+let year = date.getFullYear();
+
+const myCar = new Car("Ford", 2014);
+document.getElementById("carAge").innerHTML=
+"My car is " + myCar.age(year) + " years old.";
+
 
 
