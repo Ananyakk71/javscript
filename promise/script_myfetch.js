@@ -1,14 +1,16 @@
-function myFetch(url) {
-    return new Promise((res, rej) => {
-        $.ajax({
-            type: "GET",
-            url: url,
-            success: function(msg) {
-                res(msg);
-            } ,
-            error: function(xhr, statusText) {
-                rej(statusText);
-            },
-        });
-    });
+const cache = {
+    name: 'code Malayalam'
+};
+
+function getJson(url) {
+    if(cache) {
+        return Promise.reject(cache);
+    }
+
+    return fetch(url)
+    .then((data) => {
+        return data.json();
+    })
 }
+
+
