@@ -57,4 +57,53 @@ catch(err) {
 }
 
 
+console.log('started');
+
+let a, b, result;
+try {
+    console.log('on try');
+    a = getVal1();
+    b = getVal2();
+    result = processValues(a, b);
+}  finally {
+    console.log('in finally')
+}
+
+console.log(result);
+
+console.log('ended');
+
+function getVal1() {
+    return 12;
+}
+
+function getVal2() {
+    console.log('inside get val2')
+    throw 'my own eror';
+    return 22;
+}
+
+function processValues(a, b) {
+    return a + b;
+}
+
+function myFunction() {
+    const message = document.getElementById("message");
+    message.innerHTML = "";
+    let x = document.getElementById("test").value;
+    try { 
+      if(x == "")  throw "is Empty";
+      if(isNaN(x)) throw "not a number";
+      if(x > 10)   throw "too high";
+      if(x < 5)  throw "too low";
+    }
+    catch(err) {
+      message.innerHTML = "Input " + err;
+    }
+  }
+
+
+
+
+
 
