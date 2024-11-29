@@ -1,118 +1,224 @@
-/*iframe1.onload = function() {
-  iframe1.onload = function() {
-    iframe1.contentDocument.body.prepend("Hello, world!");
-  };
+/*console.log("start");
+
+setTimeout(function cb() {
+  console.log("callback");
+},0);*/
+ /*function cb() {
+  console.log("Callback");
+ }
+
+ setTimeout(cb, 0);
+
+console.log("end");
+
+/*let startDate = new Date().getTime();
+let endDate = startDate;
+
+while(endDate < startDate + 10000) {
+  endDate = new Date().getTime()
 }
 
-let oldDoc = iframe.contentDocument;
+console.log("while expires");*/
 
-let timer = setInterval(() => {
-  let newDoc = iframe.contentDocument;
-  if (newDoc == oldDoc) return;
 
-  alert("New document is here!");
+const radius = [3, 1, 2, 4];
 
-  clearInterval(timer);
-}, 100);
-
-if (window == top) {
-  alert('The script is in the topmost window, not in a frame');
-} else {
-  alert('The script runs in a freme');
-}
-
-let buffer = new ArrayBuffer(16)
-
-let view = new Uint32Array(buffer);
-
-alert(Uint32Array.BYTES_PER_ELEMENT)
-
-alert(view.length);
-alert(view.byteLength);
-
-view[0] = 123456
-
-for(let num of view) {
-  alert(num);
-}*/
-
-let uint8array = new Uint8Array(16);
-
-let num = 256;
-alert(num.toString(2));
-
-uint8array[0] = 256;
-uint8array[1] = 257;
-
-alert(uint8array[0]);
-alert(uint8array[1]);
-
-let buffer = new Uint8Array([255, 255, 255, 255]).buffer;
-
-let dataView = new DataView(buffer);
-
-alert( dataView.getUint8(0) );
-alert( dataView.getUint16(0) );
-alert( dataView.getUint32(0) );
-
-dataView.setUint32(0, 0);
-
-let uint8Array = new Uint8Array([0, 72, 101, 108, 108, 111, 0]);
-alert( new TextDecoder().decode(uint8Array) );
-
-let blob = new Blob(["Hello, world"], {type: 'text/plain'});
-link.href = URL.createObjectURL(blob);
-
-function showFile(input) {
-  let file = input.files[0];
-
-  alert(`File name: ${file.name}`);
-  alert(`Last modified: ${file.lastModified}`)
-}
-
-formElem.onsubmit = async (e) => {
-  e.preventDefault();
-
-  let response = await fetch('/article/formdata/post/user', {
-    method: 'POST',
-    body: new FormData(formElem)
-  });
-
-  let result = await response.json();
-
-  alert(result.message);
+const area = function (radius) {
+  return Math.PI * radius * radius;
 };
 
-let response = await fetch('https://api.github.com/repos/javascript-tutorial/en.javascript.info/commits?per_page=100');
+const circumference = function(radius) {
+  return 2 * Math.PI * radius;
+};
 
-const reader = response.body.getReader();
+const diameter = function(radius) {
+  return 2 * radius;
+};
 
-const contentLength = +response.headers.get('Content-Length');
-
-let receivedLength = 0;
-let chunks = [];
-while(true) {
-  const {done, value} = await reader.read();
-
-  if (done) {
-    break;
+Array.prototype.calculate =function (logic) {
+  const output = [];
+  for (let i = 0; i < this.length; i++) {
+    output.push(logic(this[i]));
   }
+  return output;
+};
 
-  chunks.push(value);
-  receivedLength += value.length;
+console.log(radius.map(area));
 
-  console.log(`Received ${receivedLength} of ${contentLength}`)
+console.log(radius.calculate( area));
+
+/*const calculateArea = function (radius) {
+  const output = [];
+  for (let i = 0; i < arr.length; i++) {
+    output.push(logic(arr[i]));
+  }
+  return output;
+};*/
+
+
+
+
+//console.log(calculate(radius, circumference));
+//console.log(calculate(radius, diameter))
+
+
+
+/*const calculateCircumference = function(radius){
+const output = [];
+for (let i = 0; i < radius.length; i++) {
+   output.push(2 * Math.PI * radius[i]);
+  }
+  return output;
+};
+console.log(calculateCircumference(radius));
+
+const calculatDiameter = function(radius) {
+  const output = [];
+  for (let i = 0; i < radius.length; i++) {
+    output.push(2 * radius[i]);
+  }
+  return output;
+};
+console.log(calculatDiameter(radius))*/
+
+/*const arr = [5, 1, 3, 2, 6];
+
+//double = [10, 2, 6, 4 12]
+
+//triple = [15, 3, 9, 6, 18]
+
+//binary = ["101", "1", "11", "10", "110"]
+
+/*function double(x) {
+  return x * 2;
 }
 
-let chunksAll = new Uint8Array(receivedLength);
-let position = 0;
-for(let chunk of chunks) {
-  chunksAll.set(chunk, position);
-  position += chunk.length;
+function triple(x) {
+  return x * 3;
 }
 
-let result = new TextDecoder("utf-8").decode(chunksAll);
+const output = arr.map((x) =>  x.toString(2));
 
-let commits = JSON.parse(result);
-alert(commits[0].author.login);
+console.log(output);*/
+
+const arr = [5, 1, 3, 2, 6];
+
+// filter odd values
+
+function isOdd(x) {
+  return x % 2;
+}
+
+const output = arr.filter(isOdd);
+console.log(output);
+
+function isEven(x) {
+  return x % 2 === 0;
+}
+
+const Output = arr.filter(isEven);
+console.log(Output);
+
+
+const output2 = arr.filter((x) =>  x > 4);
+console.log(output2);
+
+//sum or max
+
+function findSum (arr) {
+  let sum = 0;
+  for (let i = 0; i < arr.length; i++) {
+    sum = sum + arr[i];
+  }
+  return sum;
+}
+
+console.log(findSum(arr));
+
+const output3 = arr.reduce(function(acc, curr) {
+  acc = acc + curr;
+  return acc;
+},0);
+console.log(output3)
+
+function findMax(arr) {
+  let max = 0;
+  for (let i = 0; i < arr.length; i++) {
+    if(arr[i]>max) {
+      max = arr[i];
+    }
+  }
+  return max;
+}
+
+console.log(findMax(arr));
+
+const output4 = arr.reduce(function (max, curr){
+ if (curr > max) {
+  max = curr;
+ }
+ return max
+},0)
+
+console.log(output4)
+
+
+const users = [
+  { firstName: "akshay", lastName: "saini", age:26 },
+  { firstName: "donald", lastName: "trump", age:75 },
+  { firstName: "elon", lastName: "musk", age:50 },
+  { firstName: "deepika", lastName: "padukone", age:26},
+];
+
+
+const output5 = users.map(x => x.firstName + x.lastName);
+console.log(output5);
+
+
+
+const output6 = users.reduce(function(acc, curr){
+  if(acc[curr.age]){
+    acc[curr.age] = ++acc[curr.age];
+  } else {
+    acc[curr.age] = 1;
+  }
+  return acc
+},{})
+
+console.log(output6);
+
+const output7 = users.filter((x) => x.age<30).map((x) => x.firstName);
+console.log(output7)
+
+const person = {
+  firstName : "john",
+  lastName : "Doe",
+  age : 50,
+  eyeColor : "blue",
+  language : "english",
+  get lang() {
+    return this.language.toUpperCase();
+  }
+};
+
+let text = Object.values(person);
+document.getElementById("detail").innerHTML = person.lang;
+
+
+let xhr = new XMLHttpRequest();
+xhr.open(method, URL, [async, users, password])
+
+xhr.onload = function() {
+  alert(`Loaded: ${xhr.status} ${xhr.response}`);
+};
+
+xhr.onerror = function() {
+  alert('Network Error');
+};
+
+xhr.onprogress = function(event) {
+  alert(`Received ${event.loaded} of ${event.total}`);
+};
+
+
 
