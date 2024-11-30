@@ -1,0 +1,55 @@
+body {
+    background-color: steelblue;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 20px 40px;
+}
+
+.btn {
+    background: lightblue;
+    border: 0;
+}
+
+.btn:focus {
+    outline: none;
+}
+
+.btn:active {
+    transform: scale(0.98);
+}
+
+.form-control {
+    position: relative;
+    margin: 20px 40px;
+    width: 200px;
+}
+
+.form-control input {
+    background-color: transparent;
+    font-size: 18px;
+    position: relative;
+}
+
+.form-control input:focus,
+.form-control input:valid {
+    outline: 0;
+    border-bottom-color: lightblue;
+}
+
+.form-control label {
+    position: absolute;
+    left: 0;
+}
+
+.form-control input:focus + label span,
+.form-control input:valid + label span {
+  color: lightblue;
+  transform: translateY(-30px);
+}

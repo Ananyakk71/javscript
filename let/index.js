@@ -1,82 +1,40 @@
-/*function x() {
-    var a = 7;
-    function y(){
-        console.log(a);
-    }
-    a = 100;
-    return y;
+let x = 5
+let y = 10
+let z = x + y
+document.getElementById("sum").innerHTML = z;
+
+console.log(15 % 9);
+
+function myFynction() {
+    return "hey";
 }
-var z = x();
-console.log(z);
-z();
 
-function z() {
-    var b = 900;
-    function x() {
-        var a= 7;
-        function y(){
-            console.log(a,b);
-        }
-        y();
-    }
-    x();
-}
-z();*/
+document.getElementById("hello").innerHTML = myFynction()
 
-function x(){
-    var i = 1;
-    for(var i =1;i<=5; i++) {
-        function close(x) {
-            setInterval(function() {
-                console.log(i);
-            }, i * 1000);
-        }
-        close(i);
-    }
-    console.log("hello")
-}
-x();
-
-let map = new Map();
-
-map.set('1', 'str1');
-map.set(1, "num1");
-map.set(true, 'bool1');
-
-console.log(map.get('1'));
-console.log(map.get(1));
-console.log(map.get(true));
-
-let john = {
-    name: "john"
+const person = {
+    name: "john",
+    age: 50
 };
-let countmap = new Map();
-countmap.set(john, 123);
-console.log(countmap.get(john));
+alert(`${person.name} is ${person.age}`);
 
-let map1 = new Map([
-    ['1', 'str1'],
-    [1, 'num1'],
-    [true, 'bool1']
-]);
+const fruits = ["Banana", "Orange", "Apple", "Kiwi"];
+console.log(fruits.sort())
 
-console.log( map1.get('1') );
+const d = new Date();
+year = d.setFullYear(2024);
+console.log(year);
 
-let set = new Set();
+let age = 19;
 
-let John = { name: "john" };
-let peter = { name: "peter"};
-let mary = { name: "mary"};
+var voteble = (age< 18) ? "Too young" : "Old enough"
+console.log(voteble)
 
-set.add(John);
-set.add(peter);
-set.add(mary);
-set.add(John);
-set.add(mary);
-
-console.log(set.size);
-
-for (let user of set) {
-    console.log(user.name);
+let i;
+for (i = 0;
+    i < 10;
+    i++
+) {
+    console.log(i)
 }
 
+document.getElementById("myText").value = "Have a nice day"
