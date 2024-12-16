@@ -40,5 +40,3 @@ const createHeart = (e) => {
 
     setTimeout(() => heart.remove(), 1000)
 }
-
-
