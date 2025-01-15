@@ -1,0 +1,38 @@
+{
+    "head": {
+        "button": [
+            {
+                "text": "Register",
+                "class": "register"
+            },
+            {
+                "text": "Sign In",
+                "class": "sign"
+            }
+        ],
+        "innerText": [
+            "Home",
+            "News",
+            "Sport",
+            "Business",
+            "Innovation",
+            "Culture",
+            "Arts",
+            "Travel",
+            "Earth",
+            "Video",
+            "Live"
+        ],
+        "link": [
+            "http://127.0.0.1:5501/BBC%20Home/index.html",
+            "https://www.bbc.com/sport",
+            "https://www.bbc.com/business",
+            "https://www.bbc.com/innovation",
+            "https://www.bbc.com/culture",
+            "https://www.bbc.com/arts",
+            "https://www.bbc.com/future-planet",
+            "https://bbc.com/video",
+            "https://www.bbc.com/live"
+        ]
+    }
+}

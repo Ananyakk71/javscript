@@ -4,6 +4,6 @@ fetch('data.json')
 .then(res => res.json())
 .then(data => {
     data.forEach(post => {
-        listEl.insertAdjacentHTML('beforeend', `<l>${post.title}</l`);
+        listEl.insertAdjacentHTML('beforeend', `<li>${post.title}</l`);
     });
 })
