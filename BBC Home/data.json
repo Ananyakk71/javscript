@@ -25,14 +25,207 @@
         ],
         "link": [
             "http://127.0.0.1:5501/BBC%20Home/index.html",
+            "https://www.bbc.com/news",
             "https://www.bbc.com/sport",
             "https://www.bbc.com/business",
             "https://www.bbc.com/innovation",
             "https://www.bbc.com/culture",
             "https://www.bbc.com/arts",
+            "https://www.bbc.com/travel",
             "https://www.bbc.com/future-planet",
             "https://bbc.com/video",
             "https://www.bbc.com/live"
         ]
+    },
+    "mainSection":{
+        "firstGrid1": [
+            {
+                "image": "assets/imgs/img1.webp",
+                "headline": "Palestinians and Israelis dare to hope as Gaza deal reportedly close",
+                "description": "Mediator Qatar says there are no major issues blocking a ceasefire and hostage release agreement.",
+                "time": "15 hrs ago",
+                "link":  "https://www.bbc.com/news/articles/cm230ly8k1eo"
+              },
+              {
+                "image": "assets/imgs/img2.webp",
+                "headline": "Red Sea dive-boat survivors accuse authorities of cover up",
+                "description": "The group say their official witness statements were translated into Arabic by a boat company employee.",
+                "time": "6 hrs ago",
+                "category": "World",
+                "link":"https://www.bbc.com/news/articles/c5yv4p95m6vo"
+              }
+        ],
+        "firstGrid2":{
+            "image":"assets/imgs/img3.webp",
+            "headline":"Biden warns 'dangerous' oligarchy taking shape in farewell address",
+            "description":"The outgoing president used his final televised speech from the Oval Office to issue a series of warnings.",
+            "time":"7 mins ago",
+            "category":"US & Canada",
+            "link":"https://www.bbc.com/news/articles/c1weqzl3ydro"
+        },
+        "secondGrid": [
+            {
+                "headline":"Georgian opposition leader beaten up, blames governing party members",
+                "description":"Giorgia Gakharia needs hospital treatment in the latest attack on an opposition leader.",
+                "time":"8 hrs ago",
+                "category":"Europe",
+                "link":"https://www.bbc.com/news/articles/cwyp3750y3po"
+            },
+            {
+                "headline":"UK government says Trump has right to consider Chagos deal",
+                "description":"The biggest island, Diego Garcia, hosts a joint UK-US airbase which is of strategic importance.",
+                "time":"10 hrs ago",
+                "category":"Africa",
+                "link":"https://www.bbc.com/news/articles/cx2qpngxgp4o"
+            },
+            {
+                "headline":"US bans red dye 3 from some frosting, candy and medicine",
+                "description":"The FDA says food manufacturers have until January 2025 to remove the cherry-red dye from their products.",
+                "time":"6 hrs ago",
+                "category":"US & Canada",
+                "link":"https://www.bbc.com/news/articles/cx2qpngxgp4o"
+            },
+            {
+                "headline":"AI Brad Pitt dupes French woman out of €830,000",
+                "description":"Anne, 53, was subject to nationwide ridicule after a TV show revealed how she paid out huge sums to romance scammers pretending to be Brad Pitt.",
+                "time":"13 hrs ago",
+                "category":"Europe",
+                "link":"https://www.bbc.com/news/articles/ckgnz8rw1xgo"
+            }
+        ],
+        "BBC":{
+            "heading":" Only from the BBC",
+            "card":[
+                {
+                    "image":"assets/imgs/img4.webp",
+                    "headline":"What's the secret to Denmark's happy work-life balance?",
+                    "description":"The Nordic nation doesn't require staff to work long hours and has a generous welfare system.",
+                    "time":"8 hrs ago",
+                    "category":"Europe",
+                    "link":"https://www.bbc.com/news/articles/c20g7705re3o"
+                },
+                {
+                    "image":"assets/imgs/img5.webp",
+                    "headline":"Five daytime hacks for a better night's sleep",
+                    "description":"The secret to feeling good after a night's sleep may start during the day. Here are some tips on how to improve your sleep and feel less tired.",
+                    "time":"22 hrs ago",
+                    "category":"Future",
+                    "link":"https://www.bbc.com/future/article/20250114-five-science-backed-daytime-hacks-to-improve-your-sleep"
+                }
+            ]
+        },
+        "news":[
+            {
+                "headline":"Starmer in Kyiv to pledge more Ukraine support",
+                 "time":"2 hrs ago",
+                "category":"Europe",
+                "link":"https://www.bbc.com/news/articles/cvgem31jekvo"
+            },
+            {
+                "headline":"Starmer in Kyiv to pledge more Ukraine support",
+                 "time":"2 hrs ago",
+                "category":"Europe",
+                "link":"https://www.bbc.com/news/articles/cvgem31jekvo"
+            },
+            {
+                "headline":"Georgian opposition leader beaten up, blames governing party members",
+                 "time":"13 hrs ago",
+                "category":"Europe",
+                "link":"https://www.bbc.com/news/articles/cpql9v1r57vo"
+            },
+            {
+                "headline":"UK government says Trump has right to consider Chagos deal",
+                 "time":"15 hrs ago",
+                "category":"Europe",
+                "link":"https://www.bbc.com/news/articles/cvgem31jekvo"
+            },
+            {
+                "headline":"'Nothing off the table' in Canada's response to US tariff threat",
+                 "time":"18 hrs ago",
+                "category":"Europe",
+                "link":"https://www.bbc.com/news/articles/cvgem31jekvo"
+            }
+        ],
+        "watch":[
+            {
+                "image":"assets/imgs/img6.webp",
+                "headline":"A mother tiger on a fierce hunt to feed her cubs",
+                "description":"While her three offspring take a leisurely bath, this Bengal tiger mother must find food for the entire family.",
+                "time":"8 hrs ago",
+                "category":"Europe",
+                "link":"https://www.bbc.com/reel/video/p0kgb8bw/a-mother-tiger-on-a-fierce-hunt-to-feed-her-cubs"
+            },
+            {
+                "image":"assets/imgs/img7.webp",
+                "headline":"Joe Biden hails Israel and Hamas ceasefire deal",
+                "description":"Outgoing US President Joe Biden hails the agreed ceasefire deal between Israel and Hamas.",
+                "time":"14 hrs ago",
+                "category":"Europe",
+                "link": "https://www.bbc.com/news/videos/cr536em4mlzo"
+            },
+            {
+                "image":"assets/imgs/img8.webp",
+                "headline":"Sound of meteorite striking Earth caught on doorbell camera",
+                "description":"Experts from the University of Alberta believe this is the first time audio of a meteorite fall is recorded.",
+                "time":"13 hrs ago",
+                "category":"Europe",
+                "link":"https://www.bbc.com/news/videos/cly9vl9jjkvo"
+            },
+            {
+                "image":"assets/imgs/img9.webp",
+                "headline":"Gaza ceasefire and hostage deal announced",
+                "description":"A ceasefire deal between Israel and Hamas is announced by Qatar's prime minister.",
+                "time":"16 hrs ago",
+                "category":"Europe",
+                "link":"https://www.bbc.com/news/videos/cly9vl9jjkvo"
+            },
+            {
+                "image":"assets/imgs/img10.webp",
+                "headline":"Couple's fire-resistant LA home survives amid destruction",
+                "description":"A well-planned house that endured severe flames from the Palisades fire has put a spotlight on innovative protective features.",
+                "time":"15 hrs ago",
+                "category":"Europe",
+                "link":"https://www.bbc.com/news/videos/cly9vl9jjkvo"
+            },
+            {
+                "image":"assets/imgs/img11.webp",
+                "headline":"LA's super rich paying for private fire trucks to protect homes",
+                "description":"The BBC's Emma Vardy visits a community outside the evacuation zone where some residents are not taking any chances.",
+                "time":"8 hrs ago",
+                "category":"Europe",
+                "link":"https://www.bbc.com/news/videos/cly9vl9jjkvo"
+            },
+            {
+                "image":"assets/imgs/img12.webp",
+                "headline":"South Korea: President Yoon addresses nation before his arrest",
+                "description":"The impeached president said he will comply with questioning to prevent unsavoury bloodshed.",
+                "time":"8 hrs ago",
+                "category":"Europe",
+                "link":"https://www.bbc.com/news/videos/cly9vl9jjkvo"
+            },
+            {
+                "image":"assets/imgs/img6.webp",
+                "headline":"A mother tiger on a fierce hunt to feed her cubs",
+                "description":"While her three offspring take a leisurely bath, this Bengal tiger mother must find food for the entire family.",
+                "time":"8 hrs ago",
+                "category":"Europe",
+                "link":"https://www.bbc.com/news/videos/cly9vl9jjkvo"
+            }
+        ],
+        "innovation":{
+            "image":"assets/imgs/img13.webp",
+            "headline":"The German start-up attempting to cheat death",
+            "description":"Tomorrow.Bio, a cryonics start-up, is offering a chance at a second life for the cost of a sports car. Is cryogenics within reach, or still an empty promise?",
+            "button": "See more",
+            "link":"https://www.bbc.com/future/article/20250115-cryonics-the-start-up-that-wants-to-freeze-you-in-suspended-animation"
+        },
+        "health":{
+            "heading": "Health and wellness",
+            "image":"assets/imgs/img14.webp",
+            "headline":"Introducing Health Fix, our newsletter to boost your health and wellbeing",
+            "description":"Boost your health, from body to mind, with the latest expert thinking, every Wednesday to your inbox.",
+            "button": "See more",
+            "link":"https://www.bbc.com/future/article/20250114-boost-your-health-from-body-to-mind-with-our-health-fix-newsletter"
+        }
     }
 }

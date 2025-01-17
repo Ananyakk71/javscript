@@ -10,6 +10,18 @@ body{
     font-family: "BBC Reith Sans";
     src: url(assets/fonts/BBCReithSans_W_Bd.woff2);
 }
+@font-face {
+    font-family: "BBC Reith Sans1";
+    src: url(assets/fonts/BBCReithSans_W_Rg.woff2);
+}
+@font-face {
+    font-family: "BBC Reith Serif";
+    src: url(assets/fonts/BBCReithSerif_W_Md.woff2);
+}
+@font-face {
+    font-family: "BBC Reith Serif1";
+    src: url(assets/fonts/BBCReithSerif_W_Rg.woff2);
+}
 header{
     position: sticky;
     top: 0px;
@@ -370,10 +382,14 @@ button {
     gap: 16px;
     align-items: start;
 }
-.first-grid{
+.grd{
     display: grid;
     box-sizing: border-box;
     align-items: start;
+}
+.first-grid{
+    grid-template-columns: 1fr 2fr;
+    gap: 16px;
 }
 .first-grid-left{
     box-sizing: border-box;
@@ -401,8 +417,8 @@ button {
     object-fit: cover;
     width: 100%;
 }
-.card-media-wrapper img:hover{
-    opacity: 0.8;
+.inner-article:hover .card-media-wrapper img{
+    opacity: 0.7;
 }
 .card-text-wrapper{
     background-color: rgb(255, 255, 255);
@@ -416,19 +432,19 @@ button {
     margin: 0;
     color: rgb(32, 34, 36);
     font-family: "BBC Reith Serif", Helvetica, Arial, sans-serif;
-    font-weight: 600;
+    font-weight: 500;
     font-size: 18px;
     line-height: 22px;
     text-transform: none;
     text-decoration: none;
     letter-spacing: -0.36px;
 }
-.card-headline:hover{
+.inner-article:hover .card-headline{
     text-decoration: underline;
 }
 .card-description{
     color: rgb(32, 34, 36);
-    font-family: "BBC Reith Serif", Helvetica, Arial, sans-serif;
+    font-family: "BBC Reith Serif1", Helvetica, Arial, sans-serif;
     font-weight: 400;
     font-size: 14px;
     line-height: 18px;
@@ -444,7 +460,7 @@ button {
     gap: 8px;
 }
 .card-time span{
-    font-family: "BBC Reith Sans", Helvetica, Arial, sans-serif;
+    font-family: "BBC Reith Sans1", Helvetica, Arial, sans-serif;
     font-weight: 400;
     font-size: 12px;
     line-height: 14px;
@@ -459,6 +475,292 @@ button {
     height: 16px;
     width: 1px;
 }
+.main-article{
+    background-color: transparent;
+    align-items: stretch;
+    position: relative;
+    display: grid;
+    gap: 16px;
+}
+.minister-news{
+    grid-template-columns: 1fr;
+    background-color: transparent;
+    position: relative;
+    padding: 0px;
+    margin: 0px;
+    gap: 16px;
+    display: grid;
+}
+.main-head{
+    font-size: 28px;
+    line-height: 32px;
+    letter-spacing: -0.56px;
+}
+.main-para{
+    margin-bottom: 4px;
+}
+.minister-news:hover .card-media-wrapper img{
+    opacity: 0.7;
+}
+.minister-news:hover .card-headline{
+    text-decoration: underline;
+}
+.second-grid{
+    box-sizing: border-box;
+}
+.manchester-article{
+    border-bottom: 1px solid rgb(230, 232, 234);
+    position: relative;
+    gap: 8px;
+    display: grid;
+}
+.second-grid{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 16px;
+}
+.manchester-article:hover .card-description{
+    text-decoration: underline;
+}
+.top{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.line1{
+    margin: 0px 16px;
+    border-width: 0px;
+    height: 2px;
+    width: 100%;
+    background-color: rgb(58, 60, 62);
+}
+.section-title-wrapper{
+    padding: 0px 16px;
+    justify-content: space-between;
+    color: rgb(32, 34, 36);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 12px;
+}
+.section-title{
+    display: inline;
+    color: rgb(32, 34, 36);
+    font-family: "BBC Reith Serif", Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
+    text-transform: none;
+    text-decoration: none;
+    letter-spacing: 0px; 
+}
+.indiana-grid{
+    grid-template-columns: 1fr 1fr;
+    margin: 0px 16px;
+    gap: 16px;
+    display: grid; 
+}
+.grid-5{
+    grid-template-columns: repeat(5, 1fr);
+    align-items: start;
+    margin: 0px 16px;
+    gap: 16px;
+    display: grid;
+}
+.more-article{
+    border-bottom: none;
+    position: relative;
+    gap: 8px;
+    display: grid;
+}
+.more-article:hover .card-headline{
+    text-decoration: underline;
+}
+.section-dark{
+    display: grid;
+    width: 100%;
+    background-color: rgb(20, 22, 24);
+    padding-block: 24px;
+}
+.light{
+    background-color: rgb(230, 232, 234);
+}
+.lightclr{
+    color: rgb(230, 232, 234);
+}
+.lightclr svg{
+    fill: rgb(230, 232, 234);
+}
+.arrow-card{
+    color: rgb(255, 255, 255);
+    display: flex;
+    height: auto;
+    column-gap: 8px;
+    margin-left: auto;
+    padding: 0px 12px;
+}
+ .arrow-btn{
+    display: flex;
+    height: 32px;
+    width: 32px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+} 
+.arrow-btn svg {
+    fill: rgb(230, 232, 234);
+}
+
+.left-arrow:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background-color: transparent;
+}
+.texas-drid{
+    display: grid;
+    background-color: rgb(20, 22, 24);
+    padding: 0px 16px;
+}
+.texas-container{
+    display: flex;
+    overflow: scroll;
+    column-gap: 12px;
+    scroll-snap-type: x;
+    scrollbar-width: none;
+}
+.texas-card{
+    width: 270px;
+    flex-shrink: 0;
+    scroll-snap-align: start;
+}
+
+.content-type{
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    justify-content: center;
+    place-items: center;
+    position: absolute;
+    min-width: 24px;
+    bottom: 0px;
+    display: grid;
+    left: 0px;
+}
+.icon1{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    height: 32px;
+    width: 32px;
+    margin: 4px;
+}
+.icon1 svg{
+    fill: rgb(230, 232, 234);
+}
+.bgcl{
+    background-color: rgb(20, 22, 24);
+    color: rgb(0, 0, 0);
+}
+.section-montana{
+    margin-top: 48px;
+}
+.grid-2{
+    display: grid;
+    box-sizing: border-box;
+    margin: 0px 16px;
+}
+.montana-article{
+    grid-template-columns: 2fr 1fr;
+    position: relative;
+    display: grid;
+    gap: 0px;
+}
+#montana-img{
+    order: 0;
+}
+#montana-text{
+    right: 0px;
+    align-content: center;
+    align-items: center;
+    padding: 16px;
+}
+.card-button{
+    font-family: "BBC Reith Sans", Helvetica, Arial, sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 18px;
+    text-transform: none;
+    text-decoration: none;
+    letter-spacing: 0px;
+    margin-top: 12px;
+}
+.seemore{
+    background-color: transparent;
+    color: rgb(0, 0, 0);
+    border-color: rgb(0, 0, 0);
+    outline-color: rgba(0, 0, 0, 0);
+}
+.seemore:hover{
+    background-color: rgb(0, 0, 0);
+    color: #fff;
+}
+.montana-article:hover img{
+    opacity: 0.7;
+}
+.montana-article:hover .card-headline{
+    text-decoration: underline;
+}
+.section-health{
+    margin-top: 48px;
+}
+.health-article{
+    grid-template-columns: 1fr 2fr;
+    position: relative;
+    display: grid;
+    gap: 0px;
+}
+#health-img{
+    order: 1;
+}
+#health-text{
+    left: 0px;
+    align-content: center;
+    align-items: center;
+    padding: 16px;
+}
+.health-article:hover img{
+    opacity: 0.7;
+}
+.health-article:hover .card-headline{
+    text-decoration: underline;
+}
+.section-outer{
+    margin-top: 48px;
+}
+.grds{
+    display: grid;
+    box-sizing: border-box;
+}
+.grid-4{
+    gap: 16px;
+}
+.bottom{
+    border-bottom: 1px solid rgb(230, 232, 234);;
+}
+.article-img{
+    transition: opacity 0.2s ease-in-out;
+    grid-auto-rows: auto auto 1fr auto;
+    position: relative;
+    display: grid;
+    opacity: 1;
+}
+.article-img:hover img{
+    opacity: 0.8;
+}
+.article-img:hover .card-headline{
+    text-decoration: underline;
+}
+
 
 
 @media screen and (max-width:599px){
@@ -485,23 +787,110 @@ button {
         padding: 10px 12px;
         width: fit-content;
     }
+    .first-section{
+        margin-block: 32px;
+    }
+    .container-small{
+        margin-bottom: 16px;
+    }
+    .first-grid{
+        grid-template-columns: repeat(1, 1fr);
+        gap: 24px; 
+    }
+    .first-grid-left{
+        order: 2;
+        box-sizing: border-box;
+        align-items: start;
+    }
+    #inner-article{
+        grid-template-columns: 132px auto;
+        gap: 8px;
+        align-items: start;
+    }
+    .card-text-wrapper{
+        gap: 8px;
+    }
+    .card-headline{
+        display: flex;
+        align-items: center;
+    }
+    .card-description{
+        display: none;
+    }
+    .card-time{
+        margin-top: 0px;
+    }
+    .main-para{
+        display: block;
+    }
+    .second-grid{
+        grid-template-columns: repeat(1, 1fr);
+        gap: 16px;  
+    }
+    .indiana-grid{
+        grid-template-columns: 1fr;
+    }
+    .grid-5{
+        grid-template-columns: 1fr;
+    } 
+    .grid-2{
+        margin: 0px 0px 16px;
+    }
+    #cardDescription{
+        display: block;
+    }
+}
+@media screen and (max-width: 767px) {
+    .grid-5 {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 @media screen and (max-width:1007px){
     .nav-container{
         display: none;
     } 
+    .container-grid{
+        grid-template-columns: 1fr; 
+    }
+    .second-grid{
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px; 
+    }
+    .montana-article{
+        grid-template-columns: 1fr; 
+    }
+    .health-article{
+        grid-template-columns: 1fr; 
+    }
+    #health-img{
+        order: unset;
+    }
 }
 @media screen and (max-width: 8192px) {
     .container-section {
         margin: 0px auto;
     }
-    .first-grid{
-        grid-template-columns: 1fr 2fr;
+    .gp16{
         gap: 16px;
     }
     .first-grid-left{
         display: grid;
-
-        gap: 16px;
     }
+   
+    #montana-text {
+        grid-template-columns: subgrid;
+    }
+    #health-text{
+        grid-template-columns: subgrid;
+    }
+    .outer-grid{
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+        margin: 16px;
+    }
+    .group-grid{
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+    }
+
 }
