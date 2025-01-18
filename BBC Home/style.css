@@ -15,6 +15,10 @@ body{
     src: url(assets/fonts/BBCReithSans_W_Rg.woff2);
 }
 @font-face {
+    font-family: "BBC Reith Sans2";
+    src: url(assets/fonts/BBCReithSans_W_Md.woff2);
+}
+@font-face {
     font-family: "BBC Reith Serif";
     src: url(assets/fonts/BBCReithSerif_W_Md.woff2);
 }
@@ -64,6 +68,7 @@ button {
 }
 .lense{
     margin-left: 16px;
+    display: none;
 }
 .header-2{
     flex: 1 1 0%;
@@ -122,14 +127,13 @@ button {
     justify-content: center;
     box-sizing: border-box;
     padding: 6px 12px;
-    font-family: "BBC Reith Sans", Helvetica, Arial, sans-serif;
+    font-family: "BBC Reith Sans2", Helvetica, Arial, sans-serif;
     font-weight: 500;
     font-size: 16px;
     line-height: 18px;
     text-transform: none;
     text-decoration: none;
     letter-spacing: 0px;
-    white-space: nowrap;
 }
 .sign{
     background-color: transparent;
@@ -734,8 +738,18 @@ button {
 .health-article:hover .card-headline{
     text-decoration: underline;
 }
+
 .section-outer{
     margin-top: 48px;
+}
+.outer-grid{
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin: 16px;
+}
+.group-grid{
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
 }
 .grds{
     display: grid;
@@ -760,6 +774,133 @@ button {
 .article-img:hover .card-headline{
     text-decoration: underline;
 }
+.divider{
+    background-color: rgb(58, 60, 62);
+    margin-top: 16px;
+    height: 1px;
+    border: none;
+}
+footer{
+    max-width: 1280px;
+    width: 100%;
+    margin: 16px auto 48px;
+    padding: 0px 16px;
+    box-sizing: border-box; 
+}
+.footer-logo{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.footer-nav{
+    margin-top: 29px;
+}
+.nav-foot{
+    display: flex;
+    flex-flow: wrap;
+    gap: 18px 16px;
+    align-items: center; 
+    padding: 0;
+}
+.content-link{
+    cursor: pointer;
+    position: relative;
+    color: rgb(0, 0, 0);
+    font-family: "BBC Reith Sans2", Helvetica, Arial, sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    text-transform: none;
+    text-decoration: none;
+    letter-spacing: 0px;
+    list-style-type: none;
+}
+.content-link:hover{
+    text-decoration: underline;
+}
+.language{
+    margin-top: 21px;
+    position: relative;
+    margin-right: 16px;
+}
+.select{
+    cursor: pointer;
+    height: 44px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 6px 12px;
+    background-color: rgb(230, 232, 234);
+    color: rgb(32, 34, 36);
+    font-family: "BBC Reith Sans", Helvetica, Arial, sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    text-transform: none;
+    text-decoration: none;
+    letter-spacing: 0px;
+}
+.choose{
+    width: 24px;
+    height: 24px;
+    margin-left: 4.5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(0, 0, 0);
+}
+.up {
+    display: none;
+}
+.button-content{
+    background-color: rgb(230, 232, 234);
+    padding-bottom: 24px;
+    padding-top: 48px;
+}
+.content-head{
+    text-align: center;
+    color: rgb(32, 34, 36);
+    font-family: "BBC Reith Serif", Helvetica, Arial, sans-serif;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 28px;
+    text-transform: none;
+    text-decoration: none;
+    letter-spacing: -0.24px;
+}
+h4{
+    text-align: center;
+    color: rgb(58, 60, 62);
+    margin-top: 24px;
+    font-family: "BBC Reith Serif", Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: 0px; 
+}
+.languages{
+    max-width: 616px;
+    margin: 24px auto;
+    display: grid;
+    grid-template-rows: repeat(11, auto);
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(188px, 188px);
+    gap: 8px 16px;
+    justify-content: center;
+}
+.inner-lang{
+    color: rgb(32, 34, 36);
+    font-family: "BBC Reith Sans1", Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0px;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
 
 
 
@@ -839,10 +980,32 @@ button {
     #cardDescription{
         display: block;
     }
+    .group-grid{
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .footer-nav{
+        margin-top: 24px;
+    }
+    .nav-foot{
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 24px 0px;
+    }
+    .languages{
+        grid-template-rows: unset;
+        grid-auto-flow: row;
+        row-gap: 24px;
+        margin: 32px auto;
+        justify-content: left;
+        padding-left: 32px;
+    }
 }
 @media screen and (max-width: 767px) {
     .grid-5 {
         grid-template-columns: repeat(2, 1fr);
+    }
+    .outer-grid{
+        grid-template-columns: repeat(1, 1fr);
     }
 }
 @media screen and (max-width:1007px){
@@ -865,6 +1028,13 @@ button {
     #health-img{
         order: unset;
     }
+    .language{
+        margin-top: 24px;
+    }
+    .languages{
+        grid-template-rows: repeat(22, auto);
+        column-gap: 80px;
+    }
 }
 @media screen and (max-width: 8192px) {
     .container-section {
@@ -883,14 +1053,7 @@ button {
     #health-text{
         grid-template-columns: subgrid;
     }
-    .outer-grid{
-        grid-template-columns: repeat(2, 1fr);
-        gap: 16px;
-        margin: 16px;
-    }
-    .group-grid{
-        grid-template-columns: repeat(2, 1fr);
-        gap: 24px;
-    }
+
+    
 
 }

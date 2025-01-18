@@ -498,7 +498,7 @@ export function loadMainContent(data) {
     healthGrid.appendChild(innerCard3);
     innerCard3.appendChild(healthArticle);
     const healthImg = document.createElement("div");
-    healthImg.className = "health-img";
+    healthImg.className = "card-media-wrapper ";
     healthImg.id = "health-img";
     const img3 = document.createElement("img"); 
     img3.src = data.mainSection.health.image;

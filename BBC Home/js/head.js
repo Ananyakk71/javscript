@@ -1,5 +1,5 @@
 export function loadHeadContent(data) {
-    const wrappers = document.querySelectorAll(".wrapper");
+    const wrappers = document.querySelectorAll(".inner-card");
     const button = data.head.button;
     button.forEach((item, index) => {
         const wrapper = wrappers[index];
