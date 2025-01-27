@@ -1,5 +1,5 @@
 
-//  //
+// 
 
   let o1 = {
       val: 10,
@@ -25,7 +25,10 @@
     o3.next = o4;
 
     function addValue(val) {
-        const newNode = { val: val, next: null };
+        const newNode = { 
+            val: val,
+             next: null 
+        };
         let current = o1;
         while (current.next) {
           current = current.next;
@@ -72,10 +75,30 @@
       clickNext();
       clickNext();
       
-      
+   //Queue
+   
+let array = [];
+for (let i = 1; i <= 10; i++) {
+    array.push(i);
+}
+console.log(array);
+
+let next = array[array.length - 1] + 1;
+array.push(next);
+console.log(array);
+
+array.push(12); 
+array.push(13); 
+console.log(array);
+
+let dequeueElement = array.shift();
+console.log(array);
+
+
+
       
 
-//    // Function to add a 
+//   Function to add a 
 //   function addValue(val) {
 //     const newNode = { val: val, next: null }; 
   
@@ -93,13 +116,13 @@
 //     let prev = null;
 
 //     if (current.val === val) {
-//         o1 = current.next; // Move head to the next node
+//         o1 = current.next; 
 //         return;
 //       }
 
 //   while (current && current.val !== val) {
 //     prev = current;
-//     current = current.next; // Move to the next node
+//     current = current.next; 
 //   }
 
 //   if (current) {
@@ -110,6 +133,6 @@
   
 //   let start = o1;
 //   while (start) {
-//     console.log(start.val);  // Print the value of the current node
-//     start = start.next;      // Move to the next node
+//     console.log(start.val); 
+//     start = start.next;    
 //   }
